@@ -38,11 +38,11 @@ describe("extractCsvData", () => {
     vi.spyOn(console, "error").mockImplementation(() => undefined);
     vi.spyOn(Papa, "parse").mockImplementation(((
       _input: unknown,
-      config: Papa.ParseConfig
+      config: { error?: (error: Error) => void }
     ) => {
       config.error?.(error);
       return undefined;
-    }) as typeof Papa.parse);
+    }) as unknown as typeof Papa.parse);
 
     await expect(extractCsvData(csvFile("Value\n1"))).rejects.toThrow("boom");
   });
