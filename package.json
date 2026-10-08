@@ -2,6 +2,7 @@
   "name": "csvtochat",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@9.15.9",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -56,5 +57,14 @@
     "tw-animate-css": "^1.3.3",
     "typescript": "^5",
     "vitest": "^3.2.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
+      "braintrust",
+      "esbuild",
+      "lzo",
+      "sharp"
+    ]
   }
 }
